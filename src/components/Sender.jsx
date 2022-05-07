@@ -1,8 +1,9 @@
-import {useState, useRef} from 'react';
-import { TouchableHighlight, TextInput, View, Text, StyleSheet } from 'react-native';
-import { auth, firestore } from '../scripts/firebase';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import * as Device from 'expo-device';
+import { useRef, useState } from 'react';
+import { StyleSheet, TextInput, TouchableHighlight, View } from 'react-native';
+import { firestore } from '../scripts/firebase';
+import GifSearcher from './GifSearcher';
 
 const Sender = (props) => {
     const {userDisplayName} = props
@@ -10,7 +11,7 @@ const Sender = (props) => {
     const [gifVisible, setGifVisible] = useState(false);
     const input = useRef()
     
-    const sendMessage = async (e, userData) => {
+    const sendMessage = async (e) => {
         e.preventDefault()
         
         if (!inputValue) {
@@ -34,12 +35,12 @@ const Sender = (props) => {
     
     const preSetGif = (e) => {
         e.preventDefault()
-        setGifVisible(true)
+        setGifVisible(!gifVisible)
     }
 
     return (
         <>
-            {/* <GifSearcher gifVisible={gifVisible} setGifVisible={setGifVisible} /> */}
+            <GifSearcher gifVisible={gifVisible} setGifVisible={setGifVisible} userDisplayName={userDisplayName} />
             <View
                 style={{flexDirection:"row", padding:10}}
                 onSubmit={inputValue ? sendMessage : void 0}

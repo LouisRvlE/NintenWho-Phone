@@ -28,6 +28,14 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "L'application accède à vos photos pour que vous mettiez une image de profil."
+        }
+      ]
+    ]
   }
 }

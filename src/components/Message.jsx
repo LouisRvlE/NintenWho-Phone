@@ -26,7 +26,7 @@ const Message = (props) => {
             <View style={styleEnca}>
                 { prevAuthor !== uid ?
                     <View>
-                        <Text> {displayName} </Text>
+                        <Text style={styles.displayName}> {displayName} </Text>
                     </View>
                 :
                 null
@@ -110,6 +110,9 @@ const styles = StyleSheet.create({
         margin:3,
         borderRadius: 5,
         overflow:'hidden'
+    },
+    displayName: {
+        fontWeight: '600'
     }
 })
 

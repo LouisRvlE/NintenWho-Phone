@@ -31,6 +31,7 @@ const App = () => {
 
     const initialState = {
         displayName: '',
+        pdp:'',
         getData
     }
 
