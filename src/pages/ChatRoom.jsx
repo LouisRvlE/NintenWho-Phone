@@ -14,7 +14,7 @@ const ChatRoom = () => {
     const scrollRef = useRef()
     
     useEffect(() => {
-        scrollRef.current.scrollTo?.({ y:3000 });
+        scrollRef.current.scrollTo?.({ y:60000 });
         return () => {
         };
     }, [messages]);
