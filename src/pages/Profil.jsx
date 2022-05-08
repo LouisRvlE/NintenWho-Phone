@@ -44,7 +44,7 @@ const Profil = ({navigation}) => {
                         onPress={() => deleteData(value)}
                     >
                         <Text style={styles.textButton}>
-                            Changer de pseudo
+                            Changer les informations du profil
                         </Text>
                     </TouchableHighlight>
                     <TouchableHighlight
